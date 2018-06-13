@@ -61,14 +61,14 @@ enableGitInfo = true
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
   #organizations = [ { name = "Institut de Robotica i Informatica Industrial - IRI (CSIC-UPC)", url = "www.iri.upc.edu" } ]
-  organizations = [ { name = "IRI (CSIC-UPC), Barcelona Tech", url = "www.iri.upc.edu" } ]
+  organizations = [ { name = "IRI (CSIC-UPC), <br> Barcelona Tech", url = "www.iri.upc.edu" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "vvaquero_truck.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "vvaquero@iri.upc.edu"
-address = "C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
+  address = "Insitut de Robotica i Informatica Industrial, \n C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = " 93 4015791"
+  phone = "(+34) 93 4015791"
   #skype = "echo123"
   telegram = ""
 
