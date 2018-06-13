@@ -10,26 +10,27 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Autonomous Driving",
+    "Deep Learning",
+    "Robot Perception",
+    "Computer Vision"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "PhD in Control, Robotics and Vision"
+  institution = "Barcelona Tech - IRI (CSIC-UPC)"
+  year = 2019
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "MSc in Automatic Control and Robotics"
+  institution = "Barcelona Tech (UPC)"
+  year = 2014
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "BSc in Telecommunications Engineering"
+  institution = "Autonomous University of Madrid (UAM)"
+  year = 2010
  
 +++
 

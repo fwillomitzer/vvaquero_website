@@ -59,15 +59,16 @@ enableGitInfo = true
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Institut de Robotica i Informatica Industrial - IRI (CSIC-UPC)", url = "www.iri.upc.edu" } ]
+  #organizations = [ { name = "Institut de Robotica i Informatica Industrial - IRI (CSIC-UPC)", url = "www.iri.upc.edu" } ]
+  organizations = [ { name = "IRI (CSIC-UPC), Barcelona Tech", url = "www.iri.upc.edu" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "vvaquero@iri.upc.edu"
 address = "C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
+  #office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  phone = " 93 4015791"
+  #skype = "echo123"
   telegram = ""
 
   # Enable Keybase in Contact widget by entering your keybase.io username.
@@ -96,10 +97,10 @@ address = "C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 0
+  map = 1
   map_api_key = ""
-  latitude = "37.4275"
-  longitude = "-122.1697"
+  latitude = "41.382902"
+  longitude = "2.115644"
   zoom = 15
 
   # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
@@ -277,15 +278,15 @@ address = "C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
   url = "#projects"
   weight = 4
 
-[[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
-  weight = 5
+#[[menu.main]]
+#  name = "Teaching"
+#  url = "#teaching"
+#  weight = 5
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 6
+  weight = 5
 
 # Taxonomies.
 [taxonomies]
