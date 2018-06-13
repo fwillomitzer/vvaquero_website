@@ -64,7 +64,7 @@ enableGitInfo = true
   organizations = [ { name = "IRI (CSIC-UPC), Barcelona Tech", url = "www.iri.upc.edu" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "vvaquero_truck.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "vvaquero@iri.upc.edu"
 address = "C/Llorens i Artigas 4-6, 08028, Barcelona, SPAIN"
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
