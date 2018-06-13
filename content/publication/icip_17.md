@@ -68,8 +68,15 @@ highlight = true
 # More detail can easily be written after "+++" using *Markdown* and $\rm \LaTeX$ math code.
 
 # DOI: 10.1109/ICIP.2017.8296744
+
+# {{ < shortcode SMkwqS8XPyM > }}
+
+# testImage](static/img/ICIP17_content.jpg)
+
 +++
 
 
-![](../../static/img/ICIP17_vvaquero.pdf.jpg "Logo Title Text 1")
+
+![testImage](/img/thumbnails/ICIP17_thumbnail.jpg)
+
 
