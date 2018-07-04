@@ -1,6 +1,6 @@
 +++
 title = "Deconvolutional Networks for Point-Cloud Vehicle Detection and Tracking in Driving Scenarios"
-date = 2017-09-06T00:00:00
+date = 2017-09-16T00:00:00
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Victor Vaquero", "Ivan del Pino", "Francesc Moreno-Noguer", "Joan Solà", "Alberto Sanfeliu", "Juan Andrade-Cetto"]
