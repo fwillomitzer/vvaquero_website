@@ -24,7 +24,7 @@ publication_short = "In *ROBOT*"
 abstract = "The presented paper addresses the problem of detecting and tracking moving objects for autonomous cargo handling in port terminals using a perception system which input data is a single layer laser scanner. A computationally low cost and robust Detection and Tracking Moving Objects (DATMO) algorithm is presented to be used in autonomous guided vehicles and autonomous trucks for efficient transportation of cargo in ports. The method first detects moving objects and then tracks them, taking into account that in port terminals the structure of the environment is formed by containers and that the moving objects can be trucks, AGV, cars, straddle carriers and people among others. Two approaches of the DATMO system have been tested, the first one is oriented to detect moving obstacles and focused on tracking and filtering those detections; and the second one is focused on keepking targets when no detections are provided. The system has been evaluated with real data obtained in the CTT port terminal in Hengelo, the Netherlands. Both methods have been tested in the dataset with good results in tracking moving objects."
 
 # Featured image thumbnail (optional)
-image_preview= "robot_15_CargoAnts/Robot15_CargoAnts_ex.png"
+image_preview= "robot_15_CargoAnts/robot_15_CargoAnts_ex.png"
 
 # Is this a selected publication? (true/false)
 selected = false
@@ -70,6 +70,6 @@ highlight = true
 
 
 
-![robot15_CargoAnts_thumbnail](/img/thumbnails/Robot_15_CargoAnts.jpg)
+![robot15_CargoAnts_thumbnail](/img/thumbnails/ROBOT_15_CargoAnts.jpg)
 
 
