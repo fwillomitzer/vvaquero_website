@@ -34,7 +34,7 @@ selected = false
 #projects = ["example-external-project"]
 
 # Links (optional).
-url_pdf = "http://www.iri.upc.edu/files/scidoc/1721-Low-Cost,-Robust-and-Real-Time-System-for-Detecting-and-Tracking-Moving-Objects-to-Automate-Cargo-Handling-in-Port-Terminals.pdf"
+url_pdf = "http://www.iri.upc.edu/files/scidoc/1720-Real-time-people-detection-combining-appearance-and-depth-image-spaces-using-boosted-random-ferns.pdf"
 #url_preprint = "http://www.iri.upc.edu/files/scidoc/1902-Joint-coarse-and-fine-reasoning-for-deep-optical-flow.pdf"
 #url_code = "#"
 #url_dataset = "#"
