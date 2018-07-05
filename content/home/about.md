@@ -36,6 +36,12 @@ weight = 5
 
 # Biography
 
-Test Netlify Romantic Carson. Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Hi!
+I am a close-to-finish Ph.D student at Robotics and Computer Vision at IRI, BarcelonaTech (Institut de Robòtica i Informàtica Industrial, UPC-CSIC).
+My main research focus on create new Deep Learning methods for improving scene understanding in Autonomous Driving situations.
+At the moment, I am working as a research intern in Valeo Driving Assistance Research, Germany until summer 2018, so being able to deploy and test my algorithms in real vehicles and data. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Before this, in 2012 I got a competitive "La Caixa" scholarship (1/100) for studying my M.Sc in Automatic Control and Robotics 
+at the Technical University of Catalunya (UPC - Barcelona Tech) which I finished in 2014 as one of the best of my promotion.
+
+And previous to this, I received my B.Sc in Telecommunications Engineering from the Universidad Autónoma de Madrid (UAM) in 2010. 
