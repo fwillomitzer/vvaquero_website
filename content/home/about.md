@@ -37,7 +37,7 @@ weight = 5
 # Biography
 
 Hi!
-I am a close-to-finish Ph.D student at Robotics and Computer Vision at IRI, BarcelonaTech (Institut de Robòtica i Informàtica Industrial, UPC-CSIC).
+I am a close-to-finish Ph.D student in Robotics and Computer Vision at IRI, BarcelonaTech (Institut de Robòtica i Informàtica Industrial, UPC-CSIC).
 My main research focus on create new Deep Learning methods for improving scene understanding in Autonomous Driving situations.
 At the moment, I am working as a research intern in Valeo Driving Assistance Research, Germany until summer 2018, so being able to deploy and test my algorithms in real vehicles and data. 
 
