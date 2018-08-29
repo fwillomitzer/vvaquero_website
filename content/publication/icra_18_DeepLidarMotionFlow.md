@@ -25,7 +25,7 @@ abstract = "Perception technologies in Autonomous Driving are experiencing their
 abstract_short = "We propose a novel solution to understand the dynamics of moving vehicles of the scene from only lidar information. The main challenge of this problem stems from the fact that we need to disambiguate the proprio-motion of the “observer” vehicle from that of the external “observed” vehicles. For this purpose, we devise a CNN architecture which at testing time is fed with pairs of consecutive lidar scans. However, during training we introduce a series of so-called pretext tasks which also leverage on image data. These tasks include semantic information about vehicleness and a novel lidar-flow feature which combines standard image-based optical flow with lidar scans."
 
 # Featured image thumbnail (optional)
-image_preview = "icra_18_DeepLidarMotionFlow/icra18_main.png"
+image_preview = "icra_18_DeepLidarMotionFlow/icra_18_main.png"
 
 # Is this a selected publication? (true/false)
 selected = true
@@ -41,8 +41,8 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/2018-Deep-Lidar-CNN-to-Understand
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
-url_slides = "https://docs.google.com/presentation/d/1uRa97XRmTf57wvDiMR_cmLE4yKcFCh61CMz19X4Y260/edit?usp=sharing"
-#url_video = "#"
+url_slides = "https://docs.google.com/presentation/d/1uRa97XRmTf57wvDiMR_cmLE4yKcFCh61CMz19X4Y260/present?usp=sharing"
+url_video = "https://youtu.be/9jn0A_AwX_I"
 url_poster = "https://drive.google.com/file/d/1DB8Q03xKdo7_XGZy4CMFIosp8WFmfyI5/view?usp=sharing"
 #url_source = "#"
 
@@ -87,31 +87,104 @@ arduous task. The proprio-motion of the vehicle in which the lidar sensor is mou
 the actual motion of the other objects in the scene, which introduces additional difficulties.
 
 
-
-Fig. 1: We present a deep learning approach that, using only
-lidar information, is able to estimate the ground-plane motion
-of the surrounding vehicles. In order to guide the learning
-process we introduce to our deep framework prior semantic
-and pixel-wise motion information, obtained from solving
-simpler pretext tasks, as well as odometry measurements.
+{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_main.png" title="We present a deep learning approach that, using only lidar information, is able to estimate the ground-plane motion of the surrounding vehicles. In order to guide the learning process we introduce to our deep framework prior semantic and pixel-wise motion information, obtained from solving simpler pretext tasks, as well as odometry measurements. " >}}
 
 
-Fig. 2: Basic input and predicted output. (a) The input of the network corresponds to a pair of lidar scans, which are
-represented in 2D domains of range and reflectivity. (b) The output we seek to learn represents the motion vectors of the
+We tackle this challenging problem by designing a novel
+Deep Learning framework. Given two consecutive lidar scans
+acquired from a moving vehicle, our approach is able to
+detect the movement of the other vehicles in the scene
+which have an actual motion with respect to a “ground”
+fixed reference frame. During inference, our
+network is only fed with lidar data, although for training
+we consider a series of pretext tasks to help with solving
+the problem that can potentially exploit image information.
+
+## **Information Representation**
+
+### Input Data 
+
+The input of the network corresponds to a pair of lidar scans, which are
+represented in 2D domains of range and reflectivity, as in our [Deep Lidar](../ecmr_17_deeplidar) paper.
+
+![icra18_inputs](/img/icra_18_DeepLidarMotionFlow/icra_18_input_sample.png "ICRA_18_inputs")
+
+
+The output we seek to learn represents the motion vectors of the
 moving vehicles, colored here with the shown pattern attending to the motion angle and magnitude.
 
-
-
-Fig. 3: Pretext tasks used to guide the final learning. a) lidar-flow prior, obtained by processing pairs of frames through a
-new learned lidar-flow net; b) semantic prior, obtained by processing single frames through our vehicle lidar-detector net.
+![icra18_outputs](/img/icra_18_DeepLidarMotionFlow/icra_18_output_sample.png "ICRA_18_inputs")
 
 
 
-Fig. 4: Deep Learning architecture used to predict the motion vector of moving vehicles from two lidar scans.
+### Pretext tasks
+
+We introduce a novel lidar-flow feature that
+is learned by combining lidar and standard image-based
+optical flow. In addition, we incorporate semantic vehicleness
+information from another network trained on singe lidar
+scans. Apart from these priors, we introduce knowledge
+about the ego motion by providing odometry measurements
+as inputs too.
 
 
 
-TABLE I: Evaluation results after training the network using
-several combination of lidar- and image-based priors. Test is
-performed using only lidar inputs. Errors are measured in
-pixels, end-point-error.
+{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_lidar_flow.png" 
+caption="Lidar-flow prior, obtained by processing pairs of frames through a new learned lidar-flow net." >}}
+
+
+
+{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_vehicle_segm.png" 
+caption="Semantic prior, obtained by processing single frames through our vehicle lidar-detector net." >}}
+
+
+
+### Network
+
+Our architecture performs a concatenation
+between equally sized feature maps from the contractive and
+the expansive parts of the network which produce richer
+representations and allows better gradient flow. In addition,
+we also impose intermediate loss optimization points obtaining 
+results at different resolutions which are upsampled and
+concatenated to the immediate upper feature maps, guiding
+the final solution from early steps and allowing the back-propagation 
+of stronger and healthier gradients.
+
+![icra18_net](/img/icra_18_DeepLidarMotionFlow/icra_18_net.png "ICRA_18_net")
+
+
+
+
+### Results
+
+
+We demonstrate the correct performance of our framework by
+setting two different baselines, error@zero and error@mean.
+The first one assumes a zero regression, so that sets all the
+predictions to zero as if there were no detector. The second
+baseline measures the end-point-error that a mean-motion
+output would obtain.
+
+We also measure end-point error over the real dynamic points
+only. Both measurements are indicated as full and
+dynamic. All the given values are calculated at test time over
+the validation set only, which during the learning phase has
+never been used for training neither the main network nor the
+pretext tasks. Recall that during testing, the final networks
+are evaluated only using lidar Data. 
+
+{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_results_table.png" 
+caption="Quantitative evaluation using several combination of lidar- and image-based priors. D, F , S and O respectively for models using Data, Lidar-Flow, Vehicle Segmentation and Odometry. Test is performed using only lidar inputs. Errors are measured in pixels, end-point-error. " >}}
+
+To account for the strength of introducing optical flow as
+motion knowledge for the network, we tested training with
+only the lidar-flow ground truth (GT.F rows in the table) as
+well as with a combination of flow ground-truth, semantics
+and lidar data. Both experiments show favourable results,
+being the second one the most remarkable. However, the
+lidar-flow ground-truth is obtained from the optical flow
+extracted using RGB images, which does not accomplish our
+solo-lidar goal. We therefore perform the rest of experiments
+with the learned lidar-flow (Pred.F rows in the table) as prior,
+eliminating any dependence on camera images.
