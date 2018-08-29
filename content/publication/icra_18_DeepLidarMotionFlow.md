@@ -87,7 +87,8 @@ arduous task. The proprio-motion of the vehicle in which the lidar sensor is mou
 the actual motion of the other objects in the scene, which introduces additional difficulties.
 
 
-{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_main.png" title="We present a deep learning approach that, using only lidar information, is able to estimate the ground-plane motion of the surrounding vehicles. In order to guide the learning process we introduce to our deep framework prior semantic and pixel-wise motion information, obtained from solving simpler pretext tasks, as well as odometry measurements. " >}}
+{{< figure src="/img/icra_18_DeepLidarMotionFlow/icra_18_main.png" 
+title="We present a deep learning approach that, using only lidar information, is able to estimate the ground-plane motion of the surrounding vehicles. In order to guide the learning process we introduce to our deep framework prior semantic and pixel-wise motion information, obtained from solving simpler pretext tasks, as well as odometry measurements. " >}}
 
 
 We tackle this challenging problem by designing a novel

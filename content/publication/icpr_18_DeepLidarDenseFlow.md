@@ -25,7 +25,7 @@ abstract = "In this paper we propose a novel approach to estimate dense optical 
 abstract_short = "We propose a novel approach to estimate dense optical flow from sparse lidar data acquired on an autonomous vehicle. This is intended to be used as a drop-in replacement of any image-based optical flow system when images are not reliable due to e.g. adverse weather conditions or at night. In order to infer high resolution 2D flows from discrete range data we devise a three-block architecture of multiscale filters that combines multiple intermediate objectives, both in the lidar and image domain."
 
 # Featured image thumbnail (optional)
-image_preview = "icpr_18_DeepLidarDenseFlow/icpr18.png"
+image_preview = "icpr_18_DeepLidarDenseFlow/icpr_18_main.png"
 
 # Is this a selected publication? (true/false)
 selected = true
@@ -36,14 +36,14 @@ selected = true
 projects = ["deep-learning"]
 
 # Links (optional).
-#url_pdf = "http://www.iri.upc.edu/files/scidoc/2018-Deep-Lidar-CNN-to-Understand-the-Dynamics-of-Moving-Vehicles.pdf"
-#url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
+#url_pdf = "https://intranet.iri.upc.edu/download/scidoc/2067" TODO
+#url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"  TODO
 #url_code = "#"
 #url_dataset = "#"
-url_project = "#"
+#url_project = "#"
 #url_slides = "#"
-url_video = "#"
-#url_poster = "#"
+#url_video = "#"
+url_poster = "https://drive.google.com/file/d/1wWzyhWNdn7SGcauqdMU_KTCztiTclaAR/view?usp=sharing"
 #url_source = "#"
 
 # Custom links (optional).
@@ -66,4 +66,97 @@ highlight = true
 
 <!--- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. -->
 
+
+![icpr18_thumbnail](/img/thumbnails/ICPR_18_DLDF.jpg "ICPR_18_thumbnail")
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/94vQUwCZLxQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+  
+  
+  
+   
+   
+
+## **Paper Summary**
+
+
+All previous dense optical flow approaches take a pair of RGB images as input. In this paper we show
+how a similar high resolution flow can be obtained from a much less informative, but more robust to adverse weather
+conditions, lidar sensor. For training our network we create a lidar-to-image flow dataset, which does neither exist in the
+literature.
+
+
+We introduce a deep architecture that given two consecutive low-resolution and sparse lidar scans, produces a high-resolution and dense
+optical flow, equivalent to one that would be computed from images. Our approach, therefore, can replace RGB cameras
+when the quality images is poor due to e.g. adverse weather conditions. Inference is done from only lidar scans.
+
+
+{{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_main.png" 
+caption="Dense optical flow prediction from sparse lidar inputs only. Notice that the RGB images shown in the top-left are only considered to generate the pseudo ground-truth used during training." >}}
+
+
+
+
+## **Hallucinating Dense Optical Flow**
+
+### Network Proposed
+
+We propose a CNN architecture to hallucinate dense high resolution 2D optical flow in the image domain using as input
+only sparse and low resolution lidar information. Our network bridges the gap between lidar and camera domains, so that
+when the camera images are spoiled (e.g. at night sequences or due to heavy fog), we can still provide an accurate optical flow
+to directly substitute the degenerated image-based prediction in any vehicle navigation algorithm.
+
+
+We have devised an elaborated architecture, consisting of three main blocks. The first one estimates the motion 
+in the sparse lidar domain using a specific architecture resembling FlowNet, and it is trained with a ground-truth lidar optical flow obtained from RGB images. 
+The second block performs the domain transformation and upsampling, guiding the learning towards predicting the final optical flow in the image domain.
+Finally, a refinement step is implemented to produce more accurate, dense, and visual appealing predictions.
+
+{{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_net.png" 
+caption="Lidar to dense optical-flow architecture. The proposed network is made of three main blocks sequentially connected which resolve the problem in different stages: 1) Estimation of the lidar-flow in low resolution (red layers); 2) Low-to-high resolution flow transformation and lidar-to-image domain change (yellow layers); 3) Final flow refinement (green layers)." >}}
+
+
+### Lidar-Flow
+
+The first block of our proposed architecture aims at predicting \textit{lidar flow}, this is, the low resolution 
+flow in the lidar domain from two consecutive lidar point clouds $\mathcal{X}\_t$ and $\mathcal{X}\_{t+1}$. 
+The ground truth lidar flow for this problem, $GT\_{Lidar}\in  \mathbb{R}^{N \times M \times 2}$, 
+is computed by projecting the lidar point cloud $\mathcal{X}\_t$ onto the dense image flow $GT\_{Dense}$ and 
+keeping the motion and reflectance values of the overlapping points. 
+Since the input lidar frames are low resolution, noisy and scattered, so will it be $GT_{Lidar}$.
+
+In order to learn this low dimensional flow, we train a network 
+$\mathcal{Y}\_{Lidar} = \mathcal{G}\_{\theta\_{Lidar}}(\mathcal{X}\_t, \mathcal{X}\_{t+1}; \theta\_{Lidar}; GT\_{Lidar})$, 
+being $\mathcal{Y}\_{Lidar}$ the predicted lidar-flow and $\theta\_{Lidar}$ 
+the trainable parameters of the network $\mathcal{G}\_{\theta\_{Lidar}}$. 
+
+
+{{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_data.png" 
+caption="Building a lidar-to-optical flow dataset. Given a 3D point cloud from a laser scan (top-left) we create our input tensots with the range and reflectivity information (bottom-left) to be used as our inputs. Lidar-flow pseudo ground-truth is alsoe created by cropping the overlaping areas between the dense image-flow and the projected point cloud (bottom-right)." >}}
+
+
+### Lidar-to-Image Domain Transformation
+
+The second major block of the proposed architecture is in charge of bringing the low resolution lidar flow to the high resolution image domain. 
+Specifically, this block receives as input the lidar flow $\mathcal{Y}\_{Lidar}$ predictions along with the accordingly 
+downscaled input lidar frames and produces as output an upscaled image-centered optical flow prediction learned from $GT_{Dense}$. 
+This upscaling operation  can be formally written as  
+$\mathcal{Y}\_{Up} = \mathcal{H}\_{\theta\_{Up}}(\mathcal{X}^{\prime}\_{t}, \mathcal{X}^{\prime}\_{t+1}, \mathcal{Y}\_{Lidar}; \theta\_{Up}; GT\_{Dense})$, 
+where 
+$\mathcal{H}\_{\theta\_{Up}}$ 
+represents the model with learned parameters 
+$\theta\_{Up}$, $\mathcal{X}^{\prime}$ refers to the $1/2$ downsampled input lidar frames that match the $\mathcal{Y}\_{Lidar}$ 
+resolution, and $\mathcal{Y}\_{Up} \in \mathbb{R}^{H \times W \times 2}$ is the output predicted optical flow in the image 
+domain.
+
+
+In order to actively guide this domain transformation process, we devise an architecture with two sub-blocks (shown in yellow in the network Figure). 
+The first sub-block consists of  a set of multi-scale filters in two convolutional branches, providing context knowledge to the network. 
+In one branch we produce high frequency features by applying $5$ consecutive convolutional layers with small 
+$3 \times 5$ filters and without any lateral padding (which allows the feature maps to grow horizontally for matching 
+the desired output resolution). In the other branch, lower frequency features are generated with a convolution layer 
+using wider $3 \times 25$ filters and outputting the same feature map resolution. Finally, the features of the two branches are concatenated. 
 
