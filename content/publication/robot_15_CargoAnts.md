@@ -40,8 +40,8 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/1721-Low-Cost,-Robust-and-Real-Ti
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
-url_slides = "#"
-url_video = "#"
+url_slides = "https://drive.google.com/file/d/196XdKmwh58a_zsEITUF8pFgL6NDHXS2N/view?usp=sharing"
+url_video = "https://youtu.be/P73wNixjONI"
 #url_poster = "#"
 #url_source = "#"
 
@@ -70,6 +70,18 @@ highlight = true
 
 
 
-![robot15_CargoAnts_thumbnail](/img/thumbnails/ROBOT_15_CargoAnts.jpg)
+![robot15_CargoAnts_thumbnail](/img/thumbnails/Robot_15_CargoAnts.jpg)
 
 
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/P73wNixjONI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+___
+      
+**Acknowledgements:** 
+This work has been partially funded by the EU project
+CargoANTs FP7-SST-2013-605598 and the Spanish CICYT project DPI2013-
+42458-P.

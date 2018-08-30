@@ -147,8 +147,8 @@ This upscaling operation  can be formally written as
 $\mathcal{Y}\_{Up} = \mathcal{H}\_{\theta\_{Up}}(\mathcal{X}^{\prime}\_{t}, \mathcal{X}^{\prime}\_{t+1}, \mathcal{Y}\_{Lidar}; \theta\_{Up}; GT\_{Dense})$, 
 where 
 $\mathcal{H}\_{\theta\_{Up}}$ 
-represents the model with learned parameters 
-$\theta\_{Up}$, $\mathcal{X}^{\prime}$ refers to the $1/2$ downsampled input lidar frames that match the $\mathcal{Y}\_{Lidar}$ 
+represents the model with learned parameters $\theta\_{Up}$, $\mathcal{X}^{\prime}$ 
+refers to the 1/2 downsampled input lidar frames that match the $\mathcal{Y}\_{Lidar}$ 
 resolution, and $\mathcal{Y}\_{Up} \in \mathbb{R}^{H \times W \times 2}$ is the output predicted optical flow in the image 
 domain.
 
@@ -160,3 +160,81 @@ $3 \times 5$ filters and without any lateral padding (which allows the feature m
 the desired output resolution). In the other branch, lower frequency features are generated with a convolution layer 
 using wider $3 \times 25$ filters and outputting the same feature map resolution. Finally, the features of the two branches are concatenated. 
 
+
+### Hallucinated Optical Flow Refinement
+
+We design a similar iterative convolutional
+approach for refining the hallucinated optical flow prediction, 
+as is sketched in the green block of the network figure, 
+so that avoiding the computational burden of a CRF and obtaining a fully end-to-end procedure.
+
+
+We formally denote this final refinement step as 
+$\mathcal{Y}\_{End} = \mathcal{K}\_{\theta\_{End}}(\mathcal{Y}\_{Up}; \theta\_{End}; GT\_{Dense})$. 
+It works by performing a prediction of the final optical flow, which is concatenated to the 
+feature maps of the previous convolutional layer. 
+The concatenated tensor is then passed to another block that generates 
+again new feature maps and a new optical flow prediction, 
+but this time with a better knowledge of the desired output. 
+As shown in the green block of the network figure, 
+this process is repeated 5 times, simulating an iterative scheme.
+
+
+
+
+
+
+
+## **Results**
+
+### Qualitative Results
+
+![icpr18_res1](/img/icpr_18_DeepLidarDenseFlow/icpr_18_res1.png "ICPR_18_res1")
+{{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_res2b.png" 
+caption="Qualitative results of our system." >}}
+
+
+All images are taken during inference from our validation lidar-image-flow set,
+so none of them were previously seen during training. 
+We show four different example scenes, grouped in 4 quadrants. 
+In each quadrant there are three columns, representing the following. 
+Column 1: lidar inputs $X$ t and $X\_{t+1}$ ; Column 2-top: lidar
+flow pseudo ground-truth $GT\_{Lidar}$ ; 
+Column 2-bottom: lidar flow prediction $Y\_{Lidar}$ ; 
+Column 3-top: dense pseudo ground-truth,
+GT Dense ; Column 3-bottom: final predicted dense optical flow $Y\_{End}$.
+
+
+
+### Quantitative Results
+
+
+![icpr18_results_table](/img/icpr_18_DeepLidarDenseFlow/icpr_18_results_table.png "ICPR_18_results_table")
+{{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_results_table.png" 
+caption="Quantitative evaluation and comparison with image-based optical-flow methods. (*) indicates that for these methods the test set is slightly bigger from the one used for our approach, as we could no obtain all the corresponding lidar frames." >}}
+
+Flow for background, foreground and all is measured for both non-occluded and full
+points, as in the Kitti Flow benchmark. The End-Point-Error
+(EPE) is measured against the pseudo ground-truth computed
+using FlowNet2. Although indicative, these results show that our lidar-based approach is
+on par with other well-known optical flow algorithms that rely
+on higher resolution and quality input images.
+
+
+
+
+  
+
+
+
+___
+      
+**Acknowledgements:** 
+ This work has been supported by the
+Spanish Ministry of Economy, Industry and Competitiveness
+projects COLROBTRANSP (DPI2016-78957-R), HuMoUR
+(TIN2017-90086-R), the Spanish State Research Agency
+through the Maria de Maeztu Seal of Excellence (MDM-2016-
+0656), and the EU project LOGIMATIC (H2020-Galileo-
+2015-1-687534). We also thank Nvidia for hardware donation
+under the GPU Grant Program.

@@ -37,7 +37,7 @@ selected = true
 
 # Links (optional).
 url_pdf = "http://www.iri.upc.edu/files/scidoc/2018-Deep-Lidar-CNN-to-Understand-the-Dynamics-of-Moving-Vehicles.pdf"
-#url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
+url_preprint = "https://arxiv.org/abs/1808.09526"
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
@@ -189,3 +189,16 @@ extracted using RGB images, which does not accomplish our
 solo-lidar goal. We therefore perform the rest of experiments
 with the learned lidar-flow (Pred.F rows in the table) as prior,
 eliminating any dependence on camera images.
+
+
+
+
+___
+      
+**Acknowledgements:** 
+This work has been supported by the Spanish Ministry of Economy
+and Competitiveness projects HuMoUR (TIN2017-90086-R) and COL-
+ROBTRANSP (DPI2016-78957-R) and the Spanish State Research Agency
+through the Marı́a de Maeztu Seal of Excellence to IRI (MDM-2016-0656).
+The authors also thank Nvidia for hardware donation under the GPU grant
+program.

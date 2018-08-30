@@ -34,12 +34,12 @@ selected = false
 #projects = ["example-external-project"]
 
 # Links (optional).
-url_pdf = "http://www.iri.upc.edu/files/scidoc/1720-Real-time-people-detection-combining-appearance-and-depth-image-spaces-using-boosted-random-ferns.pdf"
+url_pdf = "http://www.iri.upc.edu/files/scidoc/1720-Real-time-people-detection-combining-appearance-and-depth-image-spaces-using-boosted-random-ferns..pdf"
 #url_preprint = "http://www.iri.upc.edu/files/scidoc/1902-Joint-coarse-and-fine-reasoning-for-deep-optical-flow.pdf"
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
-url_slides = "#"
+url_slides = "https://drive.google.com/file/d/1eF5NY2ktlylbNizuRByk97dM-GgT5ER7/view?usp=sharing"
 url_video = "https://youtu.be/CKs2qIrk2KA"
 #url_poster = "#"
 #url_source = "#"
@@ -69,6 +69,16 @@ highlight = true
 
 
 
-![robot15_CargoAnts_thumbnail](/img/thumbnails/ROBOT_15_RGBD.jpg)
+![robot15_CargoAnts_thumbnail](/img/thumbnails/Robot_15_RGBD.jpg)
 
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/CKs2qIrk2KA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+___
+      
+**Acknowledgements:** 
+This work has been partially funded by the EU project
+CargoANTs FP7-SST-2013-605598 and the Spanish CICYT project DPI2013-
+42458-P.
