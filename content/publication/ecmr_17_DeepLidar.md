@@ -38,11 +38,11 @@ selected = true
 
 # Links (optional).
 url_pdf = "http://www.iri.upc.edu/files/scidoc/1906-Deconvolutional-Networks-for-Point-Cloud-Vehicle-Detection-and-Tracking-in-Driving-Scenarios.pdf"
-url_preprint = "http://www.iri.upc.edu/files/scidoc/1906-Deconvolutional-Networks-for-Point-Cloud-Vehicle-Detection-and-Tracking-in-Driving-Scenarios.pdf"
+url_preprint = "https://arxiv.org/abs/1808.07935"
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
-url_slides = "https://drive.google.com/open?id=1M8fO36zBuBSowprmKbxT-IYrgH22xTVZzyUBrV6OMmc"
+url_slides = https://docs.google.com/presentation/d/137jkCDdU37V2HLl6BcHa9Mso9va-y7mWq9XeGka6ehQ/present?usp=sharing
 url_video = "https://youtu.be/9ENmVawR72Y"
 #url_poster = "#"
 #url_source = "#"
@@ -144,3 +144,25 @@ class and $\omega(k)$ is the previously mentioned class-imbalance regularization
 ![ecmr_figfinal](/img/ecmr_17_DeepLidar/ecmr_17_finalFigure.jpg "ECMR_17_FigFinal")
 
 ![ecmr_results](/img/ecmr_17_DeepLidar/ecmr_17_results.png "ECMR_17_Results")
+
+
+
+
+
+
+
+
+
+
+
+___
+      
+**Acknowledgements:** 
+This work has been supported by the Spanish Ministry of Economy and
+Competitiveness projects ROBINSTRUCT (TIN2014-58178-R) and COL-
+ROBTRANSP (DPI2016-78957-R), by the Spanish Ministry of Education
+FPU grant (FPU15/04446), the Spanish State Research Agency through
+the Marı́a de Maeztu Seal of Excellence to IRI (MDM-2016-0656) and
+by the EU H2020 project LOGIMATIC (H2020-Galileo-2015-1-687534).
+The authors also thank Nvidia for hardware donation under the GPU grant
+program.

@@ -116,10 +116,6 @@ Results over the Sintel Training and Test sets are presented, showing the genera
   
 ___
       
-      
-
-
-
-
-**Acknowledgements:** This work was partially supported by European AEROARMS project (H2020-ICT-2014-1-644271) and CICYT projects ColRobTransp (DPI2016-78957-R), ROBINSTRUCT (TIN2014-58178-R). 
+**Acknowledgements:** 
+This work was partially supported by European AEROARMS project (H2020-ICT-2014-1-644271) and CICYT projects ColRobTransp (DPI2016-78957-R), ROBINSTRUCT (TIN2014-58178-R). 
 Authors thank Nvidia for GPU hardware donation.
