@@ -33,22 +33,22 @@ selected = true
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
 #   Simply enter the filename (excluding '.md') of your project file in `content/project/`.
-projects = ["deep-learning"]
+# projects = ["deep-learning"]
 
 # Links (optional).
-#url_pdf = "https://intranet.iri.upc.edu/download/scidoc/2067" TODO
+url_pdf = "http://www.iri.upc.edu/files/scidoc/2067-Hallucinating-Dense-Optical-Flow-from-Sparse-Lidar-for-Autonomous-Vehicles.pdf"
 #url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"  TODO
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
 #url_slides = "#"
-#url_video = "#"
+url_video = "https://youtu.be/94vQUwCZLxQ"
 url_poster = "https://drive.google.com/file/d/1wWzyhWNdn7SGcauqdMU_KTCztiTclaAR/view?usp=sharing"
 #url_source = "#"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-#url_custom = [{name = "IRI", url = "http://www.iri.upc.edu/publications/show/2018"}]
+url_custom = [{name = "IRI", url = "http://www.iri.upc.edu/publications/show/2067"}]
 
 # Does the content use math formatting?
 math = true
@@ -143,7 +143,7 @@ caption="Building a lidar-to-optical flow dataset. Given a 3D point cloud from a
 The second major block of the proposed architecture is in charge of bringing the low resolution lidar flow to the high resolution image domain. 
 Specifically, this block receives as input the lidar flow $\mathcal{Y}\_{Lidar}$ predictions along with the accordingly 
 downscaled input lidar frames and produces as output an upscaled image-centered optical flow prediction learned from $GT_{Dense}$. 
-This upscaling operation  can be formally written as  
+This upscaling operation  can be formally written as 
 $\mathcal{Y}\_{Up} = \mathcal{H}\_{\theta\_{Up}}(\mathcal{X}^{\prime}\_{t}, \mathcal{X}^{\prime}\_{t+1}, \mathcal{Y}\_{Lidar}; \theta\_{Up}; GT\_{Dense})$, 
 where 
 $\mathcal{H}\_{\theta\_{Up}}$ 
