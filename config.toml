@@ -250,6 +250,11 @@ enableGitInfo = true
     icon_pack = "fa"
     link = "http://www.linkedin.com/in/victorvaquero/"
 
+  [[params.social]]
+    icon = "youtube"
+    icon_pack = "fa"
+    link = "https://www.youtube.com/channel/UCjB_B5wqr3H5MT9d9m_RJgQ"
+
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
