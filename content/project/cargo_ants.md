@@ -6,7 +6,7 @@ date = 2018-04-27T00:00:00
 title = "CargoAnts"
 
 # Project summary to display on homepage.
-summary = "Cargo handling by Automated Next generation Transportation Systems for ports and terminals."
+summary = "Cargo handling by Automated Next-gen. Transportation Systems for ports and terminals."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "projects/CargoAnts.png"
