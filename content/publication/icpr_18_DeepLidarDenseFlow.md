@@ -1,6 +1,6 @@
 +++
 title = "Hallucinating Dense Optical Flow from Sparse Lidar for Autonomous Vehicles"
-date = 2018-06-21T00:00:00
+date = 2018-08-21T00:00:00
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Victor Vaquero", "Alberto Sanfeliu", "Francesc Moreno-Noguer"]
