@@ -40,7 +40,7 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/2018-Deep-Lidar-CNN-to-Understand
 url_preprint = "https://arxiv.org/abs/1808.09526"
 #url_code = "#"
 #url_dataset = "#"
-#url_project = ""
+url_project = "/publication/icra_18_deeplidarmotionflow/"
 url_slides = "https://docs.google.com/presentation/d/1uRa97XRmTf57wvDiMR_cmLE4yKcFCh61CMz19X4Y260/present?usp=sharing"
 url_video = "https://youtu.be/9jn0A_AwX_I"
 url_poster = "https://drive.google.com/file/d/1DB8Q03xKdo7_XGZy4CMFIosp8WFmfyI5/view?usp=sharing"

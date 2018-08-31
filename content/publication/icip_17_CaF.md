@@ -40,7 +40,7 @@ url_preprint = "http://arxiv.org/abs/1808.07416"
 #  	Accepted in IEEE ICIP 2018. IEEE Copyrights: Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses
 #url_code = "#"
 #url_dataset = "#"
-#url_project = "#"
+url_project = "/publication/icip_17_caf/"
 #url_slides = "#"
 #url_video = "#"
 url_poster = "https://drive.google.com/open?id=1O8YUfLNNIgka-j_Zv393X5y7EEZ5zqGU"

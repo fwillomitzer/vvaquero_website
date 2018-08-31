@@ -41,7 +41,7 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/1906-Deconvolutional-Networks-for
 url_preprint = "https://arxiv.org/abs/1808.07935"
 #url_code = "#"
 #url_dataset = "#"
-#url_project = "#"
+url_project = "/publication/ecmr_17_deeplidar/"
 url_slides = "https://docs.google.com/presentation/d/137jkCDdU37V2HLl6BcHa9Mso9va-y7mWq9XeGka6ehQ/present?usp=sharing"
 url_video = "https://youtu.be/9ENmVawR72Y"
 #url_poster = "#"

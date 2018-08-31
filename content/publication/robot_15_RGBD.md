@@ -38,7 +38,7 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/1720-Real-time-people-detection-c
 #url_preprint = "http://www.iri.upc.edu/files/scidoc/1902-Joint-coarse-and-fine-reasoning-for-deep-optical-flow.pdf"
 #url_code = "#"
 #url_dataset = "#"
-#url_project = "#"
+url_project = "/publication/robot_15_rgbd/"
 url_slides = "https://drive.google.com/file/d/1eF5NY2ktlylbNizuRByk97dM-GgT5ER7/view?usp=sharing"
 url_video = "https://youtu.be/CKs2qIrk2KA"
 #url_poster = "#"

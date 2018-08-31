@@ -39,7 +39,7 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/1721-Low-Cost,-Robust-and-Real-Ti
 #url_preprint = "http://www.iri.upc.edu/files/scidoc/1902-Joint-coarse-and-fine-reasoning-for-deep-optical-flow.pdf"
 #url_code = "#"
 #url_dataset = "#"
-#url_project = "#"
+url_project = "/publication/robot_15_cargoants/"
 url_slides = "https://drive.google.com/file/d/196XdKmwh58a_zsEITUF8pFgL6NDHXS2N/view?usp=sharing"
 url_video = "https://youtu.be/P73wNixjONI"
 #url_poster = "#"
