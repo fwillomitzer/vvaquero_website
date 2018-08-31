@@ -40,7 +40,7 @@ url_pdf = "http://www.iri.upc.edu/files/scidoc/2067-Hallucinating-Dense-Optical-
 #url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"  TODO
 #url_code = "#"
 #url_dataset = "#"
-#url_project = "#"
+url_project = "/publication/icpr_18_deeplidardenseflow"
 #url_slides = "#"
 url_video = "https://youtu.be/94vQUwCZLxQ"
 url_poster = "https://drive.google.com/file/d/1wWzyhWNdn7SGcauqdMU_KTCztiTclaAR/view?usp=sharing"
