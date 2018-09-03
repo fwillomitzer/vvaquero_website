@@ -37,7 +37,7 @@ selected = true
 
 # Links (optional).
 url_pdf = "http://www.iri.upc.edu/files/scidoc/2067-Hallucinating-Dense-Optical-Flow-from-Sparse-Lidar-for-Autonomous-Vehicles.pdf"
-#url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"  TODO
+url_preprint = "https://arxiv.org/abs/1808.10542"
 #url_code = "#"
 #url_dataset = "#"
 url_project = "/publication/icpr_18_deeplidardenseflow/"
