@@ -209,7 +209,6 @@ GT Dense ; Column 3-bottom: final predicted dense optical flow $Y\_{End}$.
 ### Quantitative Results
 
 
-![icpr18_results_table](/img/icpr_18_DeepLidarDenseFlow/icpr_18_results_table.png "ICPR_18_results_table")
 {{< figure src="/img/icpr_18_DeepLidarDenseFlow/icpr_18_results_table.png" 
 caption="Quantitative evaluation and comparison with image-based optical-flow methods. (*) indicates that for these methods the test set is slightly bigger from the one used for our approach, as we could no obtain all the corresponding lidar frames." >}}
 
